@@ -106,7 +106,6 @@ public class BoardManager : MonoBehaviour {
 
 
 
-
 		boardHolder = new GameObject ("Board").transform;
 
 		for (int x = -1; x < columns + 1; x++) 
@@ -179,9 +178,10 @@ public class BoardManager : MonoBehaviour {
 		{
 			for (int z = 1; z < rows - 1; z++)
 			{
-				GameObject instance = speciesArr [x, z];
+				Species newItem = species;
+				GameObject tile = speciesArr [x, z];
 				Debug.Log (species.name);
-				if (InstanceDecision (speciesArr, x, z, instance, species)) {
+				if (InstanceDecision (speciesArr, x, z, tile, species)) {
 					GameObject newInstance = Instantiate (species.instance, new Vector3 (x, 0f, z), Quaternion.identity) as GameObject;
 					speciesArr [x, z] = newInstance;
 					Debug.Log ("created new " + species.name);
@@ -262,12 +262,12 @@ public class BoardManager : MonoBehaviour {
 	{
 		BoardSetup ();
 		InitialiseList ();
-		MapIterator (groundTiles, grass);
-		MapIterator (treeTiles, tree);
+		//MapIterator (groundTiles, grass);
+		//MapIterator (treeTiles, tree);
 
-		//LayoutObjectAtRandom (berries, berryCount.minimum, berryCount.maximum);
-		//LayoutObjectAtRandom (trees, treeCount.minimum, treeCount.maximum);
-		//LayoutObjectAtRandom (lakes, lakeCount.minimum, lakeCount.maximum);
+		LayoutObjectAtRandom (berries, berryCount.minimum, berryCount.maximum);
+		LayoutObjectAtRandom (trees, treeCount.minimum, treeCount.maximum);
+		LayoutObjectAtRandom (lakes, lakeCount.minimum, lakeCount.maximum);
 
 	}
 		

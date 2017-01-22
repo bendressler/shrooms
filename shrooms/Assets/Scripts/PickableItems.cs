@@ -10,6 +10,7 @@ public class PickableItems : MonoBehaviour {
 	float maxdistance;
 	bool visible;
 
+
 	// Use this for initialization
 	void Start () {
 		cam = GameObject.FindGameObjectWithTag ("MainCamera");
@@ -35,4 +36,14 @@ public class PickableItems : MonoBehaviour {
 			}
 		}
 	}
+
+	void OnMouseDown()
+	{
+		if (Vector3.Distance (player.transform.position, transform.position) <= 3) 
+		{
+			Destroy (gameObject);
+		}
+
+	}
+	
 }
