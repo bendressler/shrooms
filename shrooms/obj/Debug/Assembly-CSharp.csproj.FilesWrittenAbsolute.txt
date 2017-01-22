@@ -1,0 +1,17 @@
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/obj/Debug/Assembly-CSharp.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/UnityEngine.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/UnityEditor.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/Mono.Cecil.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/Unity.DataContract.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/bendressler/Documents/Unity/flyingdaggers/shrooms/Temp/bin/Debug/Mono.Cecil.Mdb.dll
