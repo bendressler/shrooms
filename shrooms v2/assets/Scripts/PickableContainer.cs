@@ -63,7 +63,7 @@ public class PickableContainer : MonoBehaviour {
 	void LootItem()
 	{
 		if (currentContainer == this.gameObject) {
-			gameManager.GetComponent<GameManager> ().inventory.GetComponentInParent<Inventory> ().AddItem (loot, 1);
+			//gameManager.GetComponent<GameManager> ().inventory.GetComponentInParent<Inventory> ().AddItem (loot, 1);
 			currentContainer = null;
 			lootPanel.SetActive (false);
 			hasPickable = false;

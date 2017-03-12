@@ -48,7 +48,7 @@ public class PickableItems : MonoBehaviour {
 				if (i.collider.gameObject == this.gameObject) {
 					if (Vector3.Distance (player.transform.position, transform.position) <= 3) 
 					{
-						gameManager.GetComponent<GameManager> ().inventory.GetComponentInParent<Inventory> ().AddItem (pickableItem,1);
+						//gameManager.GetComponent<GameManager> ().inventory.GetComponentInParent<Inventory> ().AddItem (pickableItem,1);
 						Destroy (gameObject);
 					}
 				}

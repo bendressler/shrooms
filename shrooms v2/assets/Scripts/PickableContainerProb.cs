@@ -11,32 +11,31 @@ public class PickableContainerProb : MonoBehaviour {
 	GameObject player;
 	GameObject currentContainer;
 
-	public GameObject lootPanel;
-	public Button lootBtn;
-	public Button exitBtn;
-	public Text containerTxt;
-	public Text lootTxt;
 	public string containerName;
-
+	public GameObject[] pickables;
+	public GameObject UIManager;
 	public float activDistThresh;
 	public float zoomTresh;
 	public bool active;
 	public bool hasPickable;
 	public Item loot;
 	public int lootLevel;
-	public float quality;
+	public int quality;
 
-	public GameObject[] pickables;
+	private bool lootCreated;
+	private Sprite lootSprite;
+	private UIManager UIScript;
 
 
 	// Use this for initialization
 	void Start () {
+		lootCreated = false;
 		gameManager = GameObject.Find ("GameManager");
 		cam = GameObject.FindGameObjectWithTag ("MainCamera");
 		player = GameObject.FindGameObjectWithTag ("Player");
+		UIScript = UIManager.GetComponent<UIManager> ();
 
-		Button btn = lootBtn.GetComponent<Button>();
-		btn.onClick.AddListener(LootItem);
+
 	}
 	
 	// Update is called once per frame
@@ -53,27 +52,23 @@ public class PickableContainerProb : MonoBehaviour {
 	void OnMouseDown()
 	{
 		if (active == true) {
-			int itemLevel = GenerateItemLevel (quality);
-			currentContainer = this.gameObject;
-			containerTxt.text = containerName;
-			lootTxt.text = "";
-			lootBtn.image.sprite = null;
-			lootPanel.SetActive (false);
-			SetLoot (itemLevel);
-			gameManager.GetComponent<GameManager>().inventoryOpen = true;
+			if (lootCreated == false) {
+				SetLoot (quality);
+				lootCreated = true;
+			} 
+			UIScript.OpenLootPanel (loot, lootSprite, this.gameObject);
 		}
 	}
 
 	void SetLoot(int level)
 	{
-		if (level > 0) {
-			lootTxt.text = loot.nameStr;
-			lootPanel.SetActive (true);
-			lootBtn.image.sprite = loot.sprites[level -1];
+		int itemLevel = GenerateItemLevel (quality);
+		if (itemLevel > 0) {
+			lootSprite = loot.sprites[itemLevel -1];
 		}
 	}
 
-	int GenerateItemLevel(float quality)
+	int GenerateItemLevel(int quality)
 	{
 		int level = 0;
 		for (int i = 0; i < 3; i++) 
@@ -95,19 +90,7 @@ public class PickableContainerProb : MonoBehaviour {
 			return false;
 	}
 
-	void LootItem()
-	{
-		if (currentContainer == this.gameObject) {
-			gameManager.GetComponent<GameManager> ().inventory.GetComponentInParent<Inventory> ().AddItem (loot,lootLevel);
-			currentContainer = null;
-			lootPanel.SetActive (false);
-			hasPickable = false;
-			foreach (GameObject i in pickables) {
-				Destroy (i);
-			}
-			gameManager.GetComponent<GameManager>().inventoryOpen = false;
-		}
-	}
+
 
 	void CheckActive()
 	{

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour {
-
+public class InventoryOLD : MonoBehaviour {
+	/*
 
 	public const int numItemSlots = 2;
 
@@ -84,5 +84,5 @@ public class Inventory : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-	}
+	}*/
 }

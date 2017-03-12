@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor; 
-
+/*
 [CustomEditor(typeof(Inventory))]
-public class InventoryEditor : Editor {
+public class InventoryEditorOLD : Editor {
 
 	private SerializedProperty itemImagesProperty;
 	private SerializedProperty itemsProperty;
 	private SerializedProperty buttonsProperty;
 
-	private bool[] showItemSlots =  new bool[Inventory.numItemSlots];
+	//private bool[] showItemSlots =  new bool[Inventory.numItemSlots];
 
 	private const string inventoryPropItemImagesName = "itemImages";
 	private const string inventoryPropItemsName = "items";
@@ -29,11 +29,11 @@ public class InventoryEditor : Editor {
 	{
 		serializedObject.Update ();
 
-		for (int i = 0; i < Inventory.numItemSlots; i++) {
+		//for (int i = 0; i < Inventory.numItemSlots; i++) {
 			ItemSlotGUI (i);
 		}
 
-		serializedObject.ApplyModifiedProperties ();
+		//serializedObject.ApplyModifiedProperties ();
 
 
 	}
@@ -60,4 +60,4 @@ public class InventoryEditor : Editor {
 
 
 
-}
+}*/

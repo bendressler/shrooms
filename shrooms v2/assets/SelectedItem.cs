@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public class SelectedItem : MonoBehaviour {
 
-public class InventoryButtons : MonoBehaviour {
-	/*
-	public Button slotButton;
-	public Inventory inventory;
+	/*private Text selectedItemText;
+
+
 
 	// Use this for initialization
 	void Start () {
-		inventory = GetComponentInParent<Inventory> ();
-		Button btn = slotButton.GetComponent<Button>();
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void ShowSelectedItemText()
+	{
+		if (this.gameObject.GetComponent<Toggle> ().isOn) {
+
+		}
 	}
 */
 }

@@ -20,27 +20,24 @@ public class GameManager : MonoBehaviour {
 
 	public bool gameOver;
 
-	private Inventory inventoryScript;
+	public Inventory inventoryScript;
 	public int level;
 
 	void Awake()
 	{
-		//boardScript = GetComponent<BoardManager> ();
 		InitGame ();
 	}
 
 	void InitGame()
 	{
-		//boardScript.SetupScene ();
+		inventory.GetComponent<Inventory>().SetupInventoryWindow ();
 	}
 
 	// Use this for initialization
 	void Start () {
 		stamina = 100;
 		gameOver = false;
-		inventoryScript = inventory.GetComponentInParent<Inventory> ();
-		//Button btn = nextLevel.GetComponent<Button>();
-		//btn.onClick.AddListener(NextLevel);
+		inventoryScript = inventory.GetComponent<Inventory> ();
 	}
 	
 	// Update is called once per frame
@@ -55,6 +52,7 @@ public class GameManager : MonoBehaviour {
 			{
 				inventory.SetActive (true);
 				inventoryOpen = true;
+
 			}
 
 		}
@@ -69,17 +67,12 @@ public class GameManager : MonoBehaviour {
 		}
 
 	}
-
-	void NextLevel(){
-		level++;
-		SceneManager.LoadSceneAsync("Tutorial_2");
-	}
 		
 
 	void LateUpdate()
 	{
-		//if (inventoryScript.countItem (ruleScript.CurrentGoalItem(level)) >= ruleScript.CurrentGoalCount(level)) {
-		if (inventoryScript.countAll() > 15){
+		if (inventoryScript.countAll() > 15)
+		{
 			gameOverPanel.SetActive (true);
 			gameOver = true;
 		}
